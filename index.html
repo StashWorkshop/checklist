@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Checklist maison</title>
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; connect-src https://api.github.com">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="auth" hidden>
+  <form id="auth-form">
+    <h1>Checklist maison</h1>
+    <p>Colle ton jeton GitHub (accès au dépôt <code>checklist-data</code>). Il reste sur cet appareil.</p>
+    <input id="token" type="password" autocomplete="off" placeholder="github_pat_…" required>
+    <button type="submit">Tester et enregistrer</button>
+    <p id="auth-msg" role="alert"></p>
+  </form>
+</div>
+<div id="app" hidden>
+  <nav id="rail" aria-label="Sections"></nav>
+  <main>
+    <header class="top"><h1>Checklist maison</h1><p id="status" role="status"></p></header>
+    <div id="list"></div>
+    <p class="foot"><button id="logout" type="button" class="quiet">Oublier le jeton</button></p>
+  </main>
+</div>
+<script type="module" src="app.js"></script>
+</body>
+</html>
